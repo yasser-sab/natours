@@ -1,0 +1,25 @@
+.header {	
+	$right-bottom-path:80%;
+	position:relative;
+	min-height:100vh;
+
+	@include background-img-gradient('hero');
+
+	background-position:top;
+
+	@include clipPath;
+
+
+	&__logo {
+		height: 3.5em;
+    	width: auto;
+    	margin:2em;
+	}
+
+	&__content {
+		color:$light-grey;
+		@include posAbs(calc(#{$right-bottom-path}/2));
+		text-align:center;
+	}
+
+}

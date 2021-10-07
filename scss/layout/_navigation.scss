@@ -1,0 +1,182 @@
+.navigation {
+
+	
+	&__cbx {
+		display:none;
+	}
+
+	&__hamburger {
+		position:fixed;
+		right:0;
+		top:0;
+		transform:translate(-50%,50%);
+
+		width:4em;
+		height:4em;
+		border-radius:100em;
+		cursor:pointer;
+		z-index:10;
+		
+
+		&::after,
+		&::before{
+			content:"";
+			position:absolute;
+			width:100%;
+			height:100%;
+			border-radius:100em;
+		}
+
+		&::after {
+			left:0;
+			top:0;
+			z-index:-1;
+			background:
+			radial-gradient(
+				$light-green,
+				$dark-green
+			);
+
+			transition:transform .5s ease-in-out;
+		}
+
+		&::before {
+			@include posAbs;
+			background-color:$white;
+		}
+
+		span {
+			@include posAbs;
+			background-color:$black;
+			width:60%;
+			height:2px;
+			background:$dark-grey;
+			display:inline-block;
+
+			&::before,
+			&::after {
+				content:"";
+				position:absolute;
+				height:100%;
+				width:100%;
+				left:0;
+				transition:.2s;
+				background:$dark-grey;
+			}
+
+			&::before {
+				bottom:500%;
+			}
+
+			&::after {
+				top:500%;
+			}
+		}
+
+		&:hover {
+			span::before {
+				bottom:350%;
+			}
+
+			span::after {
+				top:350%;
+			}
+		}
+	}
+
+	&__nav {
+		position:fixed;
+		left:10%;
+		top:50%;
+		transform:translate(-50%,-50%);
+		opacity:0;
+		visibility:hidden;
+		transition:opacity,left, 1s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+	}
+
+	&__links {
+		conter-reset:l;
+		font-size:2em;
+		font-weight:100;
+		color:$white;
+		text-transform:uppercase;
+		
+
+	}
+
+	&__item {
+		
+		position:relative;
+		
+		background-image:
+		linear-gradient(
+			120deg,
+			transparent 0%,
+			transparent 50%,
+			$white 50%
+		);
+
+		background-size:250%;
+
+		transition:transform,background-image, .5s;
+
+
+		&:hover {
+			background-size:100%;
+			color:$light-green;
+
+			transform:translateX(5%);
+		}
+
+		&:not(:last-child) {
+			margin-bottom:1em;
+		}
+
+		counter-increment:l;
+
+		a {
+			padding:.5em 2em;
+			display:inline-block;
+			&:before {
+			
+				content:"0"counter(l);
+				margin-right:.5em;
+			}
+		}
+	}
+
+	/* fonctionality */
+
+	&__cbx:checked + &__hamburger::after {
+		transform:scale(45);
+	}
+
+	&__cbx:checked + &__hamburger > span {
+
+		background-color:transparent;
+	}
+
+	&__cbx:checked + &__hamburger > span::before {
+		bottom:0;
+		transform:rotate(-135deg);
+	}
+
+	&__cbx:checked + &__hamburger > span::after {
+		top:0;
+		transform:rotate(135deg);
+	}
+
+	&__cbx:checked ~ &__nav {
+		//animation:moveRight 1s ease-in-out forwards;
+
+		opacity:1;
+		visibility:visible;
+		z-index:10;
+		left:50%;
+	}
+
+	&__cbx:checked ~ &__nav > &__links {
+		
+	}
+
+}

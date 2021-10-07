@@ -1,0 +1,26 @@
+.footer {
+
+	background-color:$dark-grey;
+	color:$light-grey;
+	padding:6em 0;
+
+	&__logo {
+		margin-bottom:3em;
+	}
+
+	&__list {
+		border-top:1px solid grey;
+		padding-top:1em;
+		display:inline-block;
+
+	}
+
+	&__item {
+		display:inline-block;
+	}
+
+	&__text {
+		padding-top:1em;	
+		border-top:1px solid grey;
+	}
+}

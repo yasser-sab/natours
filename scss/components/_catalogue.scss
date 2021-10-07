@@ -1,0 +1,38 @@
+.catalogue {
+	position:relative;
+	width:50%;
+	margin:0 auto;
+	height:8em;
+
+	&__photot {
+		position:absolute;
+		width:105%;
+		height:auto;
+		border-radius:.2em;
+		transition:.5s;
+		outline:.3em solid transparent;
+		outline-offset:.5em;
+
+		&:first-child {
+			left:-50%;
+		}
+		&:nth-child(2) {
+			top:10%;
+			left:50%;
+		}
+		&:last-child {
+			top:50%;
+			left:5%;
+		}
+
+		&:hover {
+			z-index:1;
+			transform:scale(1.2);
+			outline-color:$dark-green;
+		}
+	}
+
+	&:hover &__photot:not(:hover) {
+		transform:scale(.9);
+	}
+}

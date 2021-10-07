@@ -1,0 +1,44 @@
+@mixin posAbs($top:50%) {
+	position:absolute;
+	left:50%;
+	top:$top;
+	transform:translate(-50%,-50%);
+}
+
+@mixin clipPath($right-bottom:80%) {
+	clip-path:polygon(0% 0%,100% 0%,100% $right-bottom,0% 100%);
+}
+
+@mixin clearFix {
+	&::after {
+		content:"";
+		display:block;
+		clear:both;
+	}
+}
+
+@mixin background-img-gradient($img) {
+	background-image:linear-gradient(
+		to right bottom,
+		rgba($light-green,.9),
+		rgba($dark-green,.7)
+	),
+	url("../img/#{$img}.jpg");
+	background-size:cover;
+}
+
+@mixin text-gradient {
+	background-image:$gradient-green;
+	display:inline-block;
+	-webkit-background-clip:text;
+	color:transparent;
+}
+
+
+
+
+
+
+
+
+

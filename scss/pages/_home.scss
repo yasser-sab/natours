@@ -1,0 +1,82 @@
+.about {
+	background:$light-grey;
+	padding:6em 0;
+
+	@include clipPath;
+}
+
+.features {
+	@include background-img-gradient('nat-4');
+	transform:skewY(-5deg);
+	padding:10em 0;
+
+	& > * {
+		transform:skewY(5deg);
+	}
+
+	.feat {
+		background-color:rgba($white,.8);
+		border-radius:.2em;
+		text-align:center;
+		padding:2em 1em;
+
+		transition:.3s;
+
+		&:hover {
+			transform:scale(1.1) translateY(-10%);
+			z-index:1;
+		}
+
+		&__icon {
+			@include text-gradient;
+
+			font-size:4em;
+	    	line-height: 0;
+	    	margin-bottom:.5em;
+	    	display:block;
+		}
+	}
+}
+
+.tours {
+	padding:6em 0;
+
+	a {
+		margin-top:6em;
+	}
+}
+
+.stories {
+	position:relative;
+	padding:6em 0;
+
+	a {
+		margin-top:6em;
+	}
+}
+
+.books {
+	padding:8em 0;
+	background-image:linear-gradient(
+		to right bottom,
+		$light-green,
+		$dark-green
+	);
+}
+
+.book {
+	border-radius:.2em;
+	width:80%;
+	margin:0 auto;
+	background-image:linear-gradient(
+		110deg,
+		rgba($white,.8) 0%,
+		rgba($white,.8) 50%,
+		transparent 50%,
+		transparent 100%
+	),
+	url('../img/nat-10.jpg');
+	background-size:cover;
+
+	box-shadow: 0 1.5em 4em rgba($black, .2);
+}

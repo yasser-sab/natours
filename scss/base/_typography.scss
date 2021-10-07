@@ -1,0 +1,82 @@
+html {
+	font-size:16px;
+}
+
+body {
+	color:$dark-grey;
+	font-family:sans-serif;
+}
+
+a {
+	text-decoration:none;
+	color:inherit;
+}
+
+p {
+	font-size:1em;
+	font-weight:100;
+	line-height:1.5;
+}
+
+[class^="heading"] {
+	text-transform:uppercase;
+	display:inline-block;
+}
+
+.heading-primary {
+	font-size:.5em;
+	backface-visibility: hidden;
+
+	& > :first-child,
+	& > :last-child {
+		display: block;
+	}
+
+	& > :first-child {
+	    font-size: 10em;
+	    font-weight: 400;
+	    letter-spacing: .256em;
+	    animation:moveRight 1s ease-in-out forwards;
+	}
+
+	& > :last-child {
+	    font-size: 4em;
+	    font-weight: 100;
+	    letter-spacing: 0.3em;
+	    text-transform:lowercase;
+	    animation:moveLeft 1s ease-in-out forwards;
+	}
+
+
+}
+
+.heading-secondary {
+	font-size:3.5em;
+	letter-spacing:.2em;
+
+	@include text-gradient;
+	transition:.2s;
+
+	margin-bottom:1em;
+
+	&:hover {
+    	//transform: skewX(-15deg) rotate(-7deg);
+    	text-shadow:0 .1em .5em rgba(0,0,0,.5);
+
+    	transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: .5em 1em 2em rgba($black, .2);
+	}
+}
+
+.heading-tertory {
+	font-size:1em;
+	font-weight:400;
+	margin-bottom:.5em;
+	display:block;
+}
+.heading-fourty {
+	font-weight: 100;
+    color: #f7f7f7;
+    
+    font-size:1.3em;
+}
