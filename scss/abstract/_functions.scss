@@ -1,0 +1,7 @@
+@function em($value) {
+	@return $value / $fs + 0em;
+}
+
+@function percent($value) {
+	@return ($value / $fs) * 100%;
+}

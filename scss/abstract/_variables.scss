@@ -15,4 +15,15 @@ $dark-grey:#777;
 $white:#fff;
 $black:#000;
 
+/* gutters */
+
+$gutter-vertical:4em;
+$gutter-vertical-small:$gutter-vertical / 2;
+$gutter-horizontal:2em;
+
+
 $gradient-green:linear-gradient(to right bottom,$light-green,$dark-green);
+
+//fonts
+
+$fs:16;

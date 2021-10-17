@@ -7,6 +7,10 @@
 
 @mixin clipPath($right-bottom:80%) {
 	clip-path:polygon(0% 0%,100% 0%,100% $right-bottom,0% 100%);
+
+	@include respond(tab-port) {
+		clip-path:polygon(0% 0%,100% 0%,100% 85%,0% 100%);
+	}
 }
 
 @mixin clearFix {
@@ -34,11 +38,24 @@
 	color:transparent;
 }
 
+/* media manager */
 
-
-
-
-
-
-
+@mixin respond($breakpoint) {
+	
+	@if $breakpoint == tab-land {
+		@media (max-width:em(1200)) {@content;}
+	}
+	@elseif $breakpoint == tab-port{
+		@media (max-width:em(900))
+		{@content;}
+	}
+	@elseif $breakpoint == phone {
+		@media (max-width:em(600))
+		{@content;}
+	}
+	@elseif $breakpoint == big-desk {
+		@media (min-width:em(1800)){@content;}
+	}
+	
+}
 

@@ -4,14 +4,25 @@
 	color:$light-grey;
 	padding:6em 0;
 
+	@include respond(tab-port) {
+		padding:3em 0;
+	}
+
 	&__logo {
 		margin-bottom:3em;
+		height: 6em;
+    	width: auto;
 	}
 
 	&__list {
 		border-top:1px solid grey;
 		padding-top:1em;
 		display:inline-block;
+
+		@include respond(tab-port) {
+			width:100%;
+			text-align:center;
+		}
 
 	}
 

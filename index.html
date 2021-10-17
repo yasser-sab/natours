@@ -6,10 +6,185 @@
 	<link rel="stylesheet" tyle="text/css" href="css/icon-font.css">
 	<link rel="shortcut icon" type="image/png" href="img/favicon.png">
 
+	<!-- <style type="text/css">
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+		}
+		.cercle {
+			box-sizing: border-box;
+			width:35rem;
+			height: 35rem;
+			/*background-color: blue;*/
+			border:5px solid red;
+			border-left: transparent;
+			border-bottom: transparent;
+			display: inline-block;
+			border-radius: 50%;
+			animation: a 1s ease-in-out infinite;
+			transition: 1s;
+		}
+
+		.hearts {
+			position: relative;
+			width: 7.5rem;
+			height: 7.5rem;
+		}
+
+		.heart {
+			position: absolute;
+			padding: 5rem;
+			background-color: red;
+			display: inline-block;
+			transform: rotate(45deg);
+			border-bottom-right-radius: .5em;
+			border-top-left-radius: 1.5em;
+			/*animation: beat .5s linear infinite;*/
+		}
+
+		.heart::before,
+		.heart::after {
+			position: absolute;
+			content: "";
+			width: 95%;
+			height: 95%;
+			background-color: currentColor;
+			border-radius: 50%;
+		}
+
+		.heart::before {
+			left: -50%;
+			bottom: 0;			
+		}
+
+		.heart::after {
+			right: 0;
+			top: -50%;
+		}
+
+		.heart:not(:first-child) {
+			top: 150%;
+			right: 150%;
+		}
+
+		.heart:first-child {
+			animation-delay: -.1s;
+		}
+		.heart:nth-child(2) {
+			animation-delay: -.2s;
+			right: 0;
+
+
+		}
+		.heart:nth-child(3) {
+			animation-delay: -.3s;
+		}
+		.heart:last-child {
+			animation-delay: -.4s;
+		}
+
+		@keyframes beat {
+			0% {
+				transform: rotate(45deg) scale(1);
+			}
+			25% {
+				transform: rotate(45deg) scale(.5);
+			}
+			75% {
+				transform: rotate(45deg) scale(1.5);
+			}
+			100% {
+				transform: rotate(45deg) scale(1);
+			}
+		}
+
+		@keyframes a {
+			0% {
+				transform: rotate(0);
+				border-color: rgba(255,0,0,1);
+			}
+
+			50% {
+				border-color: rgba(255,0,0,.1);	
+				transform: rotate(0) translateX(12px);
+			}
+
+			100% {
+				transform: rotate(360deg);
+				border-color: rgba(255,0,0,1);
+			}
+		}
+	</style> -->
+
+	<!-- <style type="text/css">
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+		}
+		.f {
+			position: relative;
+			display: inline-block;
+			padding: 1rem;
+			background-color: red;
+			border-radius: 50%;
+			animation: r 1.5s linear infinite;
+
+		}
+
+		.f::before {
+			position: absolute;
+			content: "";
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			right: 150%;
+			top: 0;
+			background-color: inherit;
+			
+
+		}
+
+		.f::after {
+			position: absolute;
+			content: "";
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			left: 150%;
+			top: 0;
+			background-color: inherit;
+			
+		}
+
+		@keyframes r {
+			0% {
+				transform: rotate(0);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+	</style> -->
+
 </head>
 <body>
 
-	<div class="navigation">
+	<!-- <div class="cercle"></div> -->
+<!-- 	<div class="hearts">
+		<div class="heart"></div>
+		<div class="heart"></div>
+		<div class="heart"></div>
+		<div class="heart"></div>
+	</div> -->
+
+	<div class="f"></div>
+
+<!-- 	<div class="navigation">
 		<input type="checkbox" class="navigation__cbx" id="navigation__cbx">
 		<label for="navigation__cbx" class="navigation__hamburger">
 			<span></span>
@@ -279,6 +454,6 @@
 				<a href="#" class="btn btn-primary btn-primary--green">button</a>
 			</div>
 		</div>
-	</div>
+	</div> -->
 </body>
 </html>

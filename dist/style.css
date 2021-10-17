@@ -1,3 +1,5 @@
+/* gutters */
+/* media manager */
 *,
 *::before,
 *::after {
@@ -16,7 +18,16 @@ fieldset {
   border: none; }
 
 html {
-  font-size: 16px; }
+  font-size: 100%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 87.5%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 75%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 112.5%; } }
 
 body {
   color: #777;
@@ -37,7 +48,8 @@ p {
 
 .heading-primary {
   font-size: .5em;
-  backface-visibility: hidden; }
+  backface-visibility: hidden;
+  display: block; }
   .heading-primary > :first-child,
   .heading-primary > :last-child {
     display: block; }
@@ -55,13 +67,19 @@ p {
 
 .heading-secondary {
   font-size: 3.5em;
-  letter-spacing: .2em;
+  letter-spacing: .1em;
   background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
   display: inline-block;
   -webkit-background-clip: text;
   color: transparent;
   transition: .2s;
   margin-bottom: 1em; }
+  @media (max-width: 56.25em) {
+    .heading-secondary {
+      font-size: 3em; } }
+  @media (max-width: 37.5em) {
+    .heading-secondary {
+      font-size: 2.5em; } }
   .heading-secondary:hover {
     text-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.5);
     transform: skewY(2deg) skewX(15deg) scale(1.1);
@@ -192,7 +210,7 @@ p {
       left: -50%; }
     .catalogue__photot:nth-child(2) {
       top: 10%;
-      left: 50%; }
+      right: -50%; }
     .catalogue__photot:last-child {
       top: 50%;
       left: 5%; }
@@ -239,6 +257,9 @@ p {
     clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
     background-size: cover;
     background-blend-mode: screen; }
+    @media (max-width: 56.25em) {
+      .card__img {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%); } }
     .card__img--1 {
       background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg); }
     .card__img--2 {
@@ -463,24 +484,31 @@ p {
     transform: translate(-50%, 50%); }
 
 .row {
-  width: 80%;
+  max-width: 80%;
   margin: 0 auto; }
   .row [class^="col"] {
     float: left; }
     .row [class^="col"]:not(:last-child) {
-      margin-right: 3em; }
+      margin-right: 2em; }
+      @media (max-width: 56.25em) {
+        .row [class^="col"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 2em; } }
+    @media (max-width: 56.25em) {
+      .row [class^="col"] {
+        width: 100% !important; } }
   .row [class$="1-of-2"] {
-    width: calc((100% - 3em) /2); }
+    width: calc((100% - 2em) /2); }
   .row [class$="1-of-4"] {
-    width: calc((100% - (3em * 3)) /4); }
+    width: calc((100% - (2em * 3)) /4); }
   .row [class$="2-of-4"] {
-    width: calc(((100% - (3em * 3)) /4)*2 + 3em * 1); }
+    width: calc(((100% - (2em * 3)) /4)*2 + 2em * 1); }
   .row [class$="3-of-4"] {
-    width: calc(((100% - (3em * 3)) /4)*3 + 3em * 2); }
+    width: calc(((100% - (2em * 3)) /4)*3 + 2em * 2); }
   .row [class$="1-of-3"] {
-    width: calc((100% - (3em * 2)) /3); }
+    width: calc((100% - (2em * 2)) /3); }
   .row [class$="2-of-3"] {
-    width: calc(((100% - (3em * 2)) /3)*2 + 3em); }
+    width: calc(((100% - (2em * 2)) /3)*2 + 2em); }
   .row::after {
     content: "";
     display: block;
@@ -493,6 +521,9 @@ p {
   background-size: cover;
   background-position: top;
   clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%); }
+  @media (max-width: 56.25em) {
+    .header {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%); } }
   .header__logo {
     height: 3.5em;
     width: auto;
@@ -509,12 +540,21 @@ p {
   background-color: #777;
   color: #f7f7f7;
   padding: 6em 0; }
+  @media (max-width: 56.25em) {
+    .footer {
+      padding: 3em 0; } }
   .footer__logo {
-    margin-bottom: 3em; }
+    margin-bottom: 3em;
+    height: 6em;
+    width: auto; }
   .footer__list {
     border-top: 1px solid grey;
     padding-top: 1em;
     display: inline-block; }
+    @media (max-width: 56.25em) {
+      .footer__list {
+        width: 100%;
+        text-align: center; } }
   .footer__item {
     display: inline-block; }
   .footer__text {
@@ -631,6 +671,9 @@ p {
   background: #f7f7f7;
   padding: 6em 0;
   clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%); }
+  @media (max-width: 56.25em) {
+    .about {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%); } }
 
 .features {
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.9), rgba(40, 180, 133, 0.7)), url("../img/nat-4.jpg");

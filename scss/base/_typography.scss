@@ -1,5 +1,19 @@
 html {
-	font-size:16px;
+	font-size:100%;
+
+	@include respond(tab-land) {
+		font-size:percent(14);
+	}
+
+	@include respond(tab-port) {
+		font-size:percent(12);
+	}
+
+	@include respond(big-desk) {
+		font-size:percent(18);
+	}
+
+	
 }
 
 body {
@@ -26,6 +40,7 @@ p {
 .heading-primary {
 	font-size:.5em;
 	backface-visibility: hidden;
+	display:block;
 
 	& > :first-child,
 	& > :last-child {
@@ -46,18 +61,24 @@ p {
 	    text-transform:lowercase;
 	    animation:moveLeft 1s ease-in-out forwards;
 	}
-
-
 }
 
 .heading-secondary {
 	font-size:3.5em;
-	letter-spacing:.2em;
+	letter-spacing:.1em;
 
 	@include text-gradient;
 	transition:.2s;
 
 	margin-bottom:1em;
+
+	@include respond(tab-port) {
+		font-size:3em;
+	}
+
+	@include respond(phone) {
+		font-size:2.5em;
+	}
 
 	&:hover {
     	//transform: skewX(-15deg) rotate(-7deg);
