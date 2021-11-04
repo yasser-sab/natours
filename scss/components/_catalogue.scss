@@ -4,6 +4,11 @@
 	margin:0 auto;
 	height:8em;
 
+	@include respond(tab-port) {
+		height:auto;
+		width:100%;
+	}
+
 	&__photot {
 		position:absolute;
 		width:105%;
@@ -19,6 +24,12 @@
 		&:nth-child(2) {
 			top:10%;
 			right:-50%;
+
+			@include respond(tab-port){
+				margin:0 -1em;
+				margin-top:-1em;
+				transform:translateZ(100px);
+			}
 		}
 		&:last-child {
 			top:50%;
@@ -29,10 +40,18 @@
 			z-index:1;
 			transform:scale(1.2);
 			outline-color:$dark-green;
+			
+		}
+
+		@include respond(tab-port) {
+			position:static;
+			width:33.333333%;
+			float:left;
 		}
 	}
 
 	&:hover &__photot:not(:hover) {
-		transform:scale(.9);
+		transform:scale(.9) ;
 	}
+
 }

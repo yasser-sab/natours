@@ -18,3 +18,12 @@ ul {
 fieldset {
 	border:none;
 }
+
+picture {
+	display:inline-block;
+}
+
+::selection {
+	background-color:$light-green;
+	color:$white;
+}

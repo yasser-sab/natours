@@ -2,7 +2,7 @@
 	background:$light-grey;
 	padding:6em 0;
 
-	@include clipPath;
+	//@include clipPath;
 }
 
 .features {
@@ -76,6 +76,16 @@
 		transparent 100%
 	),
 	url('../img/nat-10.jpg');
+
+	@include respond(phone) {
+		background-image:linear-gradient(
+		0,
+		rgba($white,.8) 0%,
+		rgba($white,.8) 100%,
+		),
+		url('../img/nat-10.jpg');
+	}
+
 	background-size:cover;
 
 	box-shadow: 0 1.5em 4em rgba($black, .2);

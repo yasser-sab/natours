@@ -4,13 +4,9 @@
 	perspective:150rem;
 	-webkit-perspective:150rem;
 
-	
-	
-
 	&__side {
 		position:absolute;
 		border-radius:.2em;
-		
 		height:100%;
 		width:100%;
 		left:0;
@@ -18,6 +14,7 @@
 		transition:transform 1s;
 		transform-style:preserve-3d;
 
+		-webkit-backface-visibility:hidden;
 		backface-visibility:hidden;
 		overflow:hidden;
 		box-shadow: 0 1.5em 4em rgba($black, .15);
@@ -28,7 +25,6 @@
 
 		&--back {
 			transform:rotateY(-180deg);
-
 			&-1 {
                 background-image: linear-gradient(to right bottom, $light-orange, $dark-orange);
             }
@@ -42,6 +38,7 @@
             }
 		}
 
+		
 	}
 
 	&:hover &__side {
@@ -55,7 +52,7 @@
 	}
 
 	&__img {
-		height:45%;
+		height:15em;
 		@include clipPath;
 		background-size:cover;
 		background-blend-mode:screen;
@@ -73,23 +70,20 @@
 		&--3 {
 			background-image: linear-gradient(to right bottom, $light-blue, $dark-blue), 
             url(../img/nat-7.jpg);
-		}
-
-		
-		
-		
-	}
+		}	
+	} 
 
 	&__heading {
 		position:absolute;
 		right:5%;
-		top:45%;
+		top:5.8em;
 		transform:translateY(-100%);
 		font-size:2.5em;
 		font-weight:300;
 		text-transform:uppercase;
 		text-align:right;
 		width:75%;
+
 
 
 
@@ -185,11 +179,56 @@
 
 
 
+@media only screen and (max-width:900px),
+		only screen and (hover:none) {
+	.card {
+	
+	height:auto;
 
+	&__side {
 
+		position:static;
+		backface-visibility:visible;
+		height:auto;
 
+		&--back {
+			transform:rotateY(0);
+			border-radius:0;
+			-webkit-clip-path:polygon(0% 20%,100% 0%,100% 100%,0% 100%);
+			clip-path:polygon(0% 20%,100% 0%,100% 100%,0% 100%);
+		}
 
+		
+	}
 
+	&:hover &__side {
+		&--front {
+			transform:none;
+		}
+	}
 
+	&__heading {
+		width:60%;
+	}
 
+	&__details {
+		position:static;
+		transform:translate(0,0);
+		padding:2em 0;
 
+		h4 {
+			span {
+
+				&:first-child {
+					margin-bottom:.5em;
+				}
+			}
+		}
+
+		a {
+			margin-top:2em !important;
+		}
+	}
+
+}
+}

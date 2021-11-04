@@ -6,6 +6,11 @@
 	transform:skewX(-15deg);
 	box-shadow: 0 1.5em 4em rgba($black, .15);
 
+	@include respond(tab-port) {
+		transform:skewX(0);
+		width:100%;
+	}
+
 	&:not(:last-child) {
 		margin-bottom:4em;
 	}
@@ -69,6 +74,9 @@
 
 	& > * {
 		transform:skewX(15deg);
+		@include respond(tab-port) {
+			transform:skewX(0);
+		}
 	}
 
 

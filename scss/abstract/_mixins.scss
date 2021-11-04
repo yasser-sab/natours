@@ -6,11 +6,18 @@
 }
 
 @mixin clipPath($right-bottom:80%) {
-	clip-path:polygon(0% 0%,100% 0%,100% $right-bottom,0% 100%);
 
-	@include respond(tab-port) {
-		clip-path:polygon(0% 0%,100% 0%,100% 85%,0% 100%);
+
+	@supports(clip-path:polygon(0 0)) or (-webkit-clip-path:polygon(0 0)){
+		-webkit-clip-path:polygon(0% 0%,100% 0%,100% $right-bottom,0% 100%);
+		clip-path:polygon(0% 0%,100% 0%,100% $right-bottom,0% 100%);
+
+		@include respond(tab-port) {
+			-webkit-clip-path:polygon(0% 0%,100% 0%,100% 85%,0% 100%);
+			clip-path:polygon(0% 0%,100% 0%,100% 85%,0% 100%);
+		}
 	}
+	
 }
 
 @mixin clearFix {
@@ -22,13 +29,27 @@
 }
 
 @mixin background-img-gradient($img) {
+
+
+	@media(min-resolution:192dpi) and (min-width:37.5em),
+		(-webkit-min-device-pixel-ratio:2) and (min-width:37.5em){
+		background-image:linear-gradient(
+			to right bottom,
+			rgba($light-green,.9),
+			rgba($dark-green,.7)
+		),
+		url("../img/#{$img}.jpg");
+	}
+
 	background-image:linear-gradient(
 		to right bottom,
 		rgba($light-green,.9),
 		rgba($dark-green,.7)
 	),
-	url("../img/#{$img}.jpg");
+	url("../img/#{$img}-small.jpg");
 	background-size:cover;
+
+	
 }
 
 @mixin text-gradient {
@@ -39,6 +60,12 @@
 }
 
 /* media manager */
+
+/*0->600px:phone
+600px->900px:tablet portrait
+900px->1200px:tablet landscape
+1200->1800:normal
+1800-> + :big desktop*/
 
 @mixin respond($breakpoint) {
 	
